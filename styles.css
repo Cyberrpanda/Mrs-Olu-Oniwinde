@@ -1,0 +1,511 @@
+/* Custom Styles for Mrs Olu Oniwinde Portfolio */
+
+* {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #800020, #5a0016);
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(128, 0, 32, 0.9) 0%, rgba(52, 0, 13, 0.95) 100%);
+    z-index: 0;
+}
+
+/* Text Gradient */
+.text-gradient {
+    background: linear-gradient(90deg, #800020, #5a0016);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Section Padding */
+.section-padding {
+    padding: 6rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 4rem 1rem;
+    }
+}
+
+/* Navigation */
+.nav-link {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+/* CTA Buttons */
+.cta-primary {
+    background: linear-gradient(135deg, #800020 0%, #5a0016 100%);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.2);
+}
+
+.cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.3);
+    background: linear-gradient(135deg, #6d001b 0%, #470012 100%);
+}
+
+.cta-secondary {
+    background: transparent;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    color: #374151;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: #f9fafb;
+    color: #374151;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #800020;
+    box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.1);
+    background: white;
+}
+
+.form-input::placeholder {
+    color: #9ca3af;
+}
+
+.form-input.error {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.form-input.success {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.form-error {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.form-error i {
+    font-size: 0.75rem;
+}
+
+/* Textarea specific styles */
+textarea.form-input {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+    accent-color: #800020;
+}
+
+/* Social Icons */
+.social-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: linear-gradient(135deg, #800020 0%, #5a0016 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+}
+
+/* Skill Items */
+.skill-item {
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(128, 0, 32, 0.1) !important;
+}
+
+/* Skill Bar Animation */
+.skill-bar {
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    transition: all 0.3s ease;
+    background: white;
+    border: 1px solid #fbd5d5;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(128, 0, 32, 0.1);
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Page Load Animation */
+.page-load {
+    opacity: 0;
+}
+
+.page-loaded .page-load {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Mobile Menu Animation */
+.mobile-menu-enter {
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Success Counter */
+.success-counter {
+    background: linear-gradient(135deg, #f5c990 0%, #e5b982 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 900;
+}
+
+/* Section Divider */
+.section-divider {
+    height: 4px;
+    background: linear-gradient(to right, transparent, #800020, transparent);
+    margin: 0 auto;
+    width: 100px;
+}
+
+/* Floating Elements Animation */
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Form Success/Error Messages */
+#formSuccess, #formError {
+    animation: slideUp 0.3s ease-out;
+}
+
+/* Form Validation Styles */
+.form-input:valid:not(:placeholder-shown) {
+    border-color: #10b981;
+}
+
+.form-input:invalid:not(:placeholder-shown) {
+    border-color: #dc2626;
+}
+
+/* Loading State for Form */
+.form-loading .form-input {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.form-loading button[type="submit"] {
+    position: relative;
+    pointer-events: none;
+}
+
+.form-loading button[type="submit"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: form-spinner 0.6s linear infinite;
+}
+
+@keyframes form-spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+    }
+    
+    .cta-primary,
+    .cta-secondary {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-input {
+        padding: 0.75rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .back-to-top,
+    #menuBtn,
+    #loadMoreTestimonials {
+        display: none !important;
+    }
+    
+    .cta-primary,
+    .cta-secondary {
+        background: none;
+        color: black;
+        border: 1px solid black;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid #800020;
+    outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .cta-primary {
+        border: 2px solid white;
+    }
+    
+    .form-input {
+        border: 2px solid #374151;
+    }
+}
+
+
+/* Add to your existing style.css */
+
+/* Experience section specific styles */
+.experience-tag {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(128, 0, 32, 0.2);
+}
+
+.experience-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.1);
+    border-color: rgba(128, 0, 32, 0.4);
+}
+
+/* Enhanced timeline styles */
+.timeline-dot {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(128, 0, 32, 0);
+    }
+}
+
+/* Responsive adjustments for experience section */
+@media (max-width: 1024px) {
+    .timeline-item-content {
+        max-height: none;
+        overflow: visible;
+    }
+    
+    .timeline-item {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Print styles for experience section */
+@media print {
+    .experience-section {
+        page-break-inside: avoid;
+    }
+    
+    .timeline-dot {
+        border: 2px solid #800020 !important;
+        animation: none !important;
+    }
+}
