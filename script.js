@@ -652,3 +652,5 @@ document.querySelectorAll('.view-more-btn').forEach(btn => {
         }
     });
 });
+
+
