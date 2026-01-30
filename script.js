@@ -186,12 +186,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 document.getElementById("currentYear").textContent =
     new Date().getFullYear();
 
-// Form validation and submission
-const contactForm = document.getElementById("contactForm");
-const formSuccess = document.getElementById("formSuccess");
-const formError = document.getElementById("formError");
-
-// Form validation function
+// Fixed form validation function
 function validateForm() {
     let isValid = true;
     
@@ -200,18 +195,18 @@ function validateForm() {
         el.classList.add('hidden');
     });
     
-    document.querySelectorAll('.form-input').forEach(input => {
-        input.classList.remove('error', 'success');
+    document.querySelectorAll('input, textarea').forEach(input => {
+        input.classList.remove('border-red-500', 'border-green-500');
     });
     
     // Validate name
     const name = document.getElementById('name');
     if (!name.value.trim()) {
         document.getElementById('nameError').classList.remove('hidden');
-        name.classList.add('error');
+        name.classList.add('border-red-500');
         isValid = false;
     } else {
-        name.classList.add('success');
+        name.classList.add('border-green-500');
     }
     
     // Validate email
@@ -219,30 +214,30 @@ function validateForm() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email.value.trim() || !emailRegex.test(email.value)) {
         document.getElementById('emailError').classList.remove('hidden');
-        email.classList.add('error');
+        email.classList.add('border-red-500');
         isValid = false;
     } else {
-        email.classList.add('success');
+        email.classList.add('border-green-500');
     }
     
     // Validate subject
     const subject = document.getElementById('subject');
     if (!subject.value.trim()) {
         document.getElementById('subjectError').classList.remove('hidden');
-        subject.classList.add('error');
+        subject.classList.add('border-red-500');
         isValid = false;
     } else {
-        subject.classList.add('success');
+        subject.classList.add('border-green-500');
     }
     
     // Validate message
     const message = document.getElementById('message');
     if (!message.value.trim()) {
         document.getElementById('messageError').classList.remove('hidden');
-        message.classList.add('error');
+        message.classList.add('border-red-500');
         isValid = false;
     } else {
-        message.classList.add('success');
+        message.classList.add('border-green-500');
     }
     
     // Validate consent
