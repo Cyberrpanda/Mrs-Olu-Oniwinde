@@ -1,4 +1,4 @@
-// JavaScript for Mrs Olu Oniwinde Portfolio
+// JavaScript for Olu Oniwinde Portfolio
 
 // Initialize GSAP
 gsap.registerPlugin(ScrollTrigger);
