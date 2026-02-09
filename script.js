@@ -107,15 +107,15 @@ menuBtn.addEventListener("click", function () {
     // Hamburger animation
     if (mobileMenu.classList.contains("hidden")) {
         hamburger.innerHTML = `
-            <span class="block w-6 h-0.5 bg-gray-700 mb-1.5 transition-all duration-300"></span>
-            <span class="block w-6 h-0.5 bg-gray-700 mb-1.5 transition-all duration-300"></span>
-            <span class="block w-4 h-0.5 bg-gray-700 transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="block w-4 h-0.5 bg-white transition-all duration-300"></span>
         `;
     } else {
         hamburger.innerHTML = `
-            <span class="block w-6 h-0.5 bg-gray-700 mb-1.5 rotate-45 translate-y-2 transition-all duration-300"></span>
-            <span class="block w-6 h-0.5 bg-gray-700 opacity-0 transition-all duration-300"></span>
-            <span class="block w-6 h-0.5 bg-gray-700 -rotate-45 -translate-y-1 transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1.5 rotate-45 translate-y-2 transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-white opacity-0 transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-white -rotate-45 -translate-y-1 transition-all duration-300"></span>
         `;
     }
 });
@@ -125,9 +125,9 @@ document.querySelectorAll(".mobile-nav-link").forEach((link) => {
     link.addEventListener("click", () => {
         mobileMenu.classList.add("hidden");
         hamburger.innerHTML = `
-            <span class="block w-6 h-0.5 bg-gray-700 mb-1.5 transition-all duration-300"></span>
-            <span class="block w-6 h-0.5 bg-gray-700 mb-1.5 transition-all duration-300"></span>
-            <span class="block w-4 h-0.5 bg-gray-700 transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="block w-4 h-0.5 bg-white transition-all duration-300"></span>
         `;
     });
 });
@@ -251,96 +251,104 @@ function validateForm() {
 }
 
 // Contact form submission
-contactForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+const formError = document.getElementById('formError');
 
-    // Validate form
-    if (!validateForm()) {
-        return;
-    }
+if (contactForm) {
+    contactForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
+        // Validate form
+        if (!validateForm()) {
+            return;
+        }
 
-    // Loading state
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
-    submitBtn.disabled = true;
-    this.classList.add('form-loading');
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
 
-    // Hide previous messages
-    formSuccess.classList.add('hidden');
-    formError.classList.add('hidden');
+        // Loading state
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+        submitBtn.disabled = true;
+        this.classList.add('form-loading');
 
-    try {
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // Hide previous messages
+        formSuccess.classList.add('hidden');
+        formError.classList.add('hidden');
 
-        // Success animation
-        submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
-        
-        // Show success message
-        formSuccess.classList.remove('hidden');
-        formSuccess.style.animation = 'slideUp 0.3s ease-out';
-        
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            this.reset();
+        try {
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            // Success animation
+            submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+            
+            // Show success message
+            formSuccess.classList.remove('hidden');
+            formSuccess.style.animation = 'slideUp 0.3s ease-out';
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                this.classList.remove('form-loading');
+                formSuccess.classList.add('hidden');
+                
+                // Clear validation styles
+                document.querySelectorAll('.form-input').forEach(input => {
+                    input.classList.remove('error', 'success');
+                });
+            }, 3000);
+
+        } catch (error) {
+            // Error handling
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
             this.classList.remove('form-loading');
-            formSuccess.classList.add('hidden');
             
-            // Clear validation styles
-            document.querySelectorAll('.form-input').forEach(input => {
-                input.classList.remove('error', 'success');
-            });
-        }, 3000);
-
-    } catch (error) {
-        // Error handling
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-        this.classList.remove('form-loading');
-        
-        // Show error message
-        formError.classList.remove('hidden');
-        formError.style.animation = 'slideUp 0.3s ease-out';
-        
-        // Hide error after 5 seconds
-        setTimeout(() => {
-            formError.classList.add('hidden');
-        }, 5000);
-    }
-});
+            // Show error message
+            formError.classList.remove('hidden');
+            formError.style.animation = 'slideUp 0.3s ease-out';
+            
+            // Hide error after 5 seconds
+            setTimeout(() => {
+                formError.classList.add('hidden');
+            }, 5000);
+        }
+    });
+}
 
 // Real-time form validation
-contactForm.addEventListener('input', function(e) {
-    const input = e.target;
-    
-    // Remove error/success classes on input
-    input.classList.remove('error', 'success');
-    
-    // Hide error message for this input
-    const errorId = input.id + 'Error';
-    const errorElement = document.getElementById(errorId);
-    if (errorElement) {
-        errorElement.classList.add('hidden');
-    }
-    
-    // Validate specific fields as user types
-    if (input.id === 'email' && input.value.trim()) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(input.value)) {
-            input.classList.add('error');
-            if (errorElement) {
-                errorElement.textContent = 'Please enter a valid email address';
-                errorElement.classList.remove('hidden');
-            }
-        } else {
-            input.classList.add('success');
+if (contactForm) {
+    contactForm.addEventListener('input', function(e) {
+        const input = e.target;
+        
+        // Remove error/success classes on input
+        input.classList.remove('error', 'success');
+        
+        // Hide error message for this input
+        const errorId = input.id + 'Error';
+        const errorElement = document.getElementById(errorId);
+        if (errorElement) {
+            errorElement.classList.add('hidden');
         }
-    }
-});
+        
+        // Validate specific fields as user types
+        if (input.id === 'email' && input.value.trim()) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(input.value)) {
+                input.classList.add('error');
+                if (errorElement) {
+                    errorElement.textContent = 'Please enter a valid email address';
+                    errorElement.classList.remove('hidden');
+                }
+            } else {
+                input.classList.add('success');
+            }
+        }
+    });
+}
 
 // Load Testimonials
 function loadTestimonials() {
@@ -354,24 +362,24 @@ function loadTestimonials() {
         const testimonialCard = document.createElement("div");
         const initials = testimonial.name.split(' ').map(n => n[0]).join('').toUpperCase();
         
-        testimonialCard.className = "testimonial-card rounded-xl p-6";
+        testimonialCard.className = "testimonial-card rounded-xl p-6 border-2 border-burgundy-200 bg-white/95 backdrop-blur-sm shadow-lg";
         testimonialCard.innerHTML = `
             <div class="flex items-center mb-4">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-burgundy-500 to-burgundy-700 flex items-center justify-center mr-4 shadow-lg">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-burgundy-500 to-burgundy-700 flex items-center justify-center mr-4 shadow-lg testimonial-initials">
                     <span class="text-white font-bold text-lg">${initials}</span>
                 </div>
                 <div>
                     <h4 class="font-bold text-gray-900 text-lg">${testimonial.name}</h4>
                 </div>
             </div>
-            <div class="text-yellow-400 mb-4">
+            <div class="text-yellow-400 mb-4 testimonial-stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
             </div>
-            <p class="text-gray-600 italic">"${testimonial.testimony}"</p>
+            <p class="text-gray-600 italic testimonial-quote">"${testimonial.testimony}"</p>
         `;
         testimonialsGrid.appendChild(testimonialCard);
     });
@@ -488,72 +496,30 @@ sections.forEach(section => {
     });
 });
 
-// Add CSS for hover effects
-document.head.insertAdjacentHTML('beforeend', `
-    <style>
-        .skill-item:hover .skill-bar {
-            transform: scaleY(1.2);
-            transition: transform 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: #800020;
-        }
-        
-        .mobile-nav-link:hover {
-            background: rgba(128, 0, 32, 0.05);
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-3px) rotate(5deg);
-        }
-        
-        .back-to-top:hover {
-            transform: translateY(-5px) scale(1.1);
-        }
-        
-        @media (max-width: 768px) {
-            .section-padding {
-                padding: 3rem 1rem;
-            }
-            
-            .hero-section {
-                padding-top: 7rem;
-            }
-        }
-        
-        /* Form focus styles */
-        .form-input:focus {
-            transform: translateY(-1px);
-        }
-        
-        /* Smooth transitions */
-        .form-input,
-        .cta-primary,
-        .cta-secondary {
-            transition: all 0.2s ease-in-out;
-        }
-        
-        /* Enhanced button hover effects */
-        .cta-primary:hover,
-        .cta-secondary:hover {
-            transform: translateY(-3px) scale(1.02);
-        }
-        
-        /* Accessibility improvements */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
-`);
+// Add hover effects to testimonial cards
+document.addEventListener('mouseover', function(e) {
+    if (e.target.closest('.testimonial-card')) {
+        const card = e.target.closest('.testimonial-card');
+        gsap.to(card, {
+            scale: 1.02,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+    }
+});
 
-// Add to your existing script.js
+document.addEventListener('mouseout', function(e) {
+    if (e.target.closest('.testimonial-card')) {
+        const card = e.target.closest('.testimonial-card');
+        gsap.to(card, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+    }
+});
 
-// Experience section animations
+// Initialize experience animations when page loads
 function initExperienceAnimations() {
     // Animate timeline dots on scroll
     const timelineDots = document.querySelectorAll('.timeline-dot');
@@ -572,80 +538,9 @@ function initExperienceAnimations() {
             }
         });
     });
-
-    // Animate responsibility items on hover
-    document.querySelectorAll('.responsibility-item').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            gsap.to(item.querySelector('.responsibility-icon'), {
-                rotate: 10,
-                scale: 1.1,
-                duration: 0.3,
-                ease: "back.out(1.7)"
-            });
-        });
-
-        item.addEventListener('mouseleave', () => {
-            gsap.to(item.querySelector('.responsibility-icon'), {
-                rotate: 0,
-                scale: 1,
-                duration: 0.3,
-                ease: "back.out(1.7)"
-            });
-        });
-    });
-
-    // Animate achievement cards
-    const achievementCards = document.querySelectorAll('.achievement-card');
-    achievementCards.forEach((card, index) => {
-        ScrollTrigger.create({
-            trigger: card,
-            start: "top 85%",
-            onEnter: () => {
-                gsap.from(card, {
-                    x: index % 2 === 0 ? -20 : 20,
-                    opacity: 0,
-                    duration: 0.6,
-                    delay: index * 0.1,
-                    ease: "power3.out"
-                });
-            }
-        });
-    });
 }
 
-// Initialize experience animations when page loads
+// Initialize experience animations
 window.addEventListener('load', () => {
-    // Call after a slight delay to ensure DOM is ready
     setTimeout(initExperienceAnimations, 500);
 });
-
-// Add click handlers for expanded view (optional)
-document.querySelectorAll('.view-more-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const details = this.nextElementSibling;
-        const isExpanded = details.classList.contains('expanded');
-        
-        if (isExpanded) {
-            gsap.to(details, {
-                height: 0,
-                duration: 0.3,
-                ease: "power2.inOut",
-                onComplete: () => details.classList.remove('expanded', 'block')
-            });
-            this.innerHTML = '<i class="fas fa-chevron-down mr-2"></i>View More Details';
-        } else {
-            details.classList.add('expanded', 'block');
-            gsap.fromTo(details, 
-                { height: 0 }, 
-                { 
-                    height: 'auto', 
-                    duration: 0.3,
-                    ease: "power2.inOut" 
-                }
-            );
-            this.innerHTML = '<i class="fas fa-chevron-up mr-2"></i>View Less';
-        }
-    });
-});
-
-

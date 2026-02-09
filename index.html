@@ -78,66 +78,18 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-    /* Additional form styling */
-    .form-group {
-        position: relative;
-        margin-bottom: 1.5rem;
-    }
-    
-    .form-label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-        color: #374151;
-    }
-    
-    .form-input {
-        width: 100%;
-        padding: 0.75rem 1rem;
-        border: 1px solid #d1d5db;
-        border-radius: 0.5rem;
-        font-size: 1rem;
-        transition: all 0.2s;
-    }
-    
-    .form-input:focus {
-        outline: none;
-        border-color: #800020;
-        box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.1);
-    }
-    
-    .form-error {
-        color: #dc2626;
-        font-size: 0.875rem;
-        margin-top: 0.25rem;
-    }
-    
-    /* Make form responsive */
-    @media (max-width: 768px) {
-        #contact .grid {
-            gap: 2rem;
-        }
-        
-        .form-input {
-            padding: 0.625rem 0.875rem;
-        }
-    }
-</style>
-
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-nude-50 text-gray-800">
     <!-- Floating Background Elements -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="absolute top-10 left-10 w-64 h-64 bg-burgundy-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
-        <div class="absolute bottom-10 right-10 w-80 h-80 bg-burgundy-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style="animation-delay: 2s"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-burgundy-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse-slow"></div>
+        <div class="absolute top-10 left-10 w-64 h-64 bg-burgundy-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-burgundy-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style="animation-delay: 2s"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-burgundy-400 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
     </div>
 
     <!-- Navigation Bar -->
-    <nav id="navbar" class="bg-white/90 backdrop-blur-md fixed w-full z-50 transition-all duration-300 border-b border-nude-200 shadow-sm">
+    <nav id="navbar" class="bg-burgundy-900 backdrop-blur-md fixed w-full z-50 transition-all duration-300 border-b border-burgundy-800 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
@@ -148,58 +100,58 @@
                              class="w-full h-full object-cover">
                     </div>
                     <div>
-                        <span class="text-xl font-bold text-gray-900 hidden md:block">Olu Oniwinde</span>
-                        <span class="text-sm text-burgundy-600 font-medium hidden md:block">Project Manager</span>
+                        <span class="text-xl font-bold text-white hidden md:block">Olu Oniwinde</span>
+                        <span class="text-sm text-burgundy-300 font-medium hidden md:block">Project Manager</span>
                     </div>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-burgundy-600 font-medium transition-all duration-300 relative group">
+                    <a href="#home" class="nav-link text-gray-200 hover:text-white font-medium transition-all duration-300 relative group">
                         <span class="relative z-10">Home</span>
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy-600 group-hover:w-full transition-all duration-300"></span>
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy-300 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-burgundy-600 font-medium transition-all duration-300 relative group">
+                    <a href="#about" class="nav-link text-gray-200 hover:text-white font-medium transition-all duration-300 relative group">
                         <span class="relative z-10">About</span>
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy-600 group-hover:w-full transition-all duration-300"></span>
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy-300 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#experience" class="nav-link text-gray-700 hover:text-burgundy-600 font-medium transition-all duration-300 relative group">
+                    <a href="#experience" class="nav-link text-gray-200 hover:text-white font-medium transition-all duration-300 relative group">
                         <span class="relative z-10">Experience</span>
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy-600 group-hover:w-full transition-all duration-300"></span>
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy-300 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#skills" class="nav-link text-gray-700 hover:text-burgundy-600 font-medium transition-all duration-300 relative group">
+                    <a href="#skills" class="nav-link text-gray-200 hover:text-white font-medium transition-all duration-300 relative group">
                         <span class="relative z-10">Skills</span>
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy-600 group-hover:w-full transition-all duration-300"></span>
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy-300 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#testimonials" class="nav-link text-gray-700 hover:text-burgundy-600 font-medium transition-all duration-300 relative group">
+                    <a href="#testimonials" class="nav-link text-gray-200 hover:text-white font-medium transition-all duration-300 relative group">
                         <span class="relative z-10">Testimonials</span>
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy-600 group-hover:w-full transition-all duration-300"></span>
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy-300 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-burgundy-600 font-medium transition-all duration-300 relative group">
+                    <a href="#contact" class="nav-link text-gray-200 hover:text-white font-medium transition-all duration-300 relative group">
                         <span class="relative z-10">Contact</span>
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy-600 group-hover:w-full transition-all duration-300"></span>
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-burgundy-300 group-hover:w-full transition-all duration-300"></span>
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none relative w-10 h-10">
+                <button id="menuBtn" class="md:hidden text-white focus:outline-none relative w-10 h-10">
                     <div class="hamburger">
-                        <span class="block w-6 h-0.5 bg-gray-700 mb-1.5 transition-all duration-300"></span>
-                        <span class="block w-6 h-0.5 bg-gray-700 mb-1.5 transition-all duration-300"></span>
-                        <span class="block w-4 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                        <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+                        <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+                        <span class="block w-4 h-0.5 bg-white transition-all duration-300"></span>
                     </div>
                 </button>
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-md py-4 border-t animate-slide-up">
+            <div id="mobileMenu" class="hidden md:hidden bg-burgundy-900/95 backdrop-blur-md py-4 border-t border-burgundy-800 animate-slide-up">
                 <div class="flex flex-col space-y-2">
-                    <a href="#home" class="mobile-nav-link text-gray-700 hover:text-burgundy-600 font-medium px-4 py-3 rounded-lg hover:bg-burgundy-50 transition-all duration-300">Home</a>
-                    <a href="#about" class="mobile-nav-link text-gray-700 hover:text-burgundy-600 font-medium px-4 py-3 rounded-lg hover:bg-burgundy-50 transition-all duration-300">About</a>
-                    <a href="#experience" class="mobile-nav-link text-gray-700 hover:text-burgundy-600 font-medium px-4 py-3 rounded-lg hover:bg-burgundy-50 transition-all duration-300">Experience</a>
-                    <a href="#skills" class="mobile-nav-link text-gray-700 hover:text-burgundy-600 font-medium px-4 py-3 rounded-lg hover:bg-burgundy-50 transition-all duration-300">Skills</a>
-                    <a href="#testimonials" class="mobile-nav-link text-gray-700 hover:text-burgundy-600 font-medium px-4 py-3 rounded-lg hover:bg-burgundy-50 transition-all duration-300">Testimonials</a>
-                    <a href="#contact" class="mobile-nav-link text-gray-700 hover:text-burgundy-600 font-medium px-4 py-3 rounded-lg hover:bg-burgundy-50 transition-all duration-300">Contact</a>
+                    <a href="#home" class="mobile-nav-link text-gray-200 hover:text-white font-medium px-4 py-3 rounded-lg hover:bg-burgundy-800 transition-all duration-300">Home</a>
+                    <a href="#about" class="mobile-nav-link text-gray-200 hover:text-white font-medium px-4 py-3 rounded-lg hover:bg-burgundy-800 transition-all duration-300">About</a>
+                    <a href="#experience" class="mobile-nav-link text-gray-200 hover:text-white font-medium px-4 py-3 rounded-lg hover:bg-burgundy-800 transition-all duration-300">Experience</a>
+                    <a href="#skills" class="mobile-nav-link text-gray-200 hover:text-white font-medium px-4 py-3 rounded-lg hover:bg-burgundy-800 transition-all duration-300">Skills</a>
+                    <a href="#testimonials" class="mobile-nav-link text-gray-200 hover:text-white font-medium px-4 py-3 rounded-lg hover:bg-burgundy-800 transition-all duration-300">Testimonials</a>
+                    <a href="#contact" class="mobile-nav-link text-gray-200 hover:text-white font-medium px-4 py-3 rounded-lg hover:bg-burgundy-800 transition-all duration-300">Contact</a>
                 </div>
             </div>
         </div>
@@ -207,20 +159,20 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-section pt-32 pb-20 relative overflow-hidden">
-        <div class="absolute inset-0 bg-burgundy-900 z-0"></div>
-        <div class="absolute inset-0 bg-gradient-to-br from-burgundy-800 via-burgundy-900 to-burgundy-950 z-0"></div>
+        <div class="absolute inset-0 bg-nude-50 z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-nude-400 via-nude-50 to-nude-600 z-0"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Content -->
                 <div class="animate-slide-in-left">
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                         <span class="block"> Olu</span>
-                        <span class="block text-nude-300">Oniwinde</span>
+                        <span class="block text-burgundy-600">Oniwinde</span>
                     </h1>
-                    <p class="text-2xl text-nude-200 mb-8 font-light">
+                    <p class="text-2xl text-gray-800 mb-8 font-light">
                         Project Manager| Agile & Waterfall | Stakeholder Engagement | Process Improvement | Digital Transformation 
                     </p>
-                    <p class="text-nude-100 mb-10 text-lg">
+                    <p class="text-gray-700 mb-10 text-lg">
                         I am an Agile Project Manager with more than Eight years of experience delivering digital products and transformation initiatives across start-ups, consultancy, SaaS and wider technology environments. I manage multiple projects at once and using Jira and Jira Align to plan roadmaps, track progress, map dependencies and keep visibility clear across teams and programmes.My work spans end-to-end delivery, from shaping requirements and planning releases to leading teams through build, testing and launch. I have delivered a range of digital change and technology projects, including mobile and web app development, PAS implementation, cloud migration and data modernisation. I enjoy bringing teams together to solve complex problems and move work forward in a structured and transparent way.
                     </p>
                     
@@ -236,16 +188,16 @@
                     <!-- Stats -->
                     <div class="grid grid-cols-3 gap-6">
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-nude-300 mb-2 success-counter">45+</div>
-                            <div class="text-nude-200">Projects Delivered</div>
+                            <div class="text-3xl font-bold text-burgundy-600 mb-2 success-counter">45+</div>
+                            <div class="text-gray-700">Projects Delivered</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-nude-300 mb-2">98%</div>
-                            <div class="text-nude-200">On-Time Rate</div>
+                            <div class="text-3xl font-bold text-burgundy-600 mb-2">98%</div>
+                            <div class="text-gray-700">On-Time Rate</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-nude-300 mb-2">100%</div>
-                            <div class="text-nude-200">Client Satisfaction</div>
+                            <div class="text-3xl font-bold text-burgundy-600 mb-2">100%</div>
+                            <div class="text-gray-700">Client Satisfaction</div>
                         </div>
                     </div>
                 </div>
@@ -280,14 +232,14 @@
 
         <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <a href="#about" class="text-white">
+            <a href="#about" class="text-gray-900">
                 <i class="fas fa-chevron-down text-2xl"></i>
             </a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section-padding bg-white relative">
+    <section id="about" class="section-padding bg-nude-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16 page-load">
@@ -433,7 +385,7 @@
     </section>
     
         <!-- Experience Section -->
-    <section id="experience" class="section-padding bg-gradient-to-b from-burgundy-50 to-white relative">
+    <section id="experience" class="section-padding bg-nude-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16 page-load">
@@ -845,7 +797,7 @@
 
 
     <!-- Skills Section -->
-    <section id="skills" class="section-padding bg-white relative">
+    <section id="skills" class="section-padding bg-nude-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16 page-load">
@@ -1129,7 +1081,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="section-padding bg-gradient-to-b from-white to-burgundy-50 relative">
+    <section id="testimonials" class="section-padding bg-nude-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 page-load">
                 <div class="inline-block mb-4">
@@ -1166,7 +1118,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-white relative">
+    <section id="contact" class="section-padding bg-nude-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 page-load">
                 <div class="inline-block mb-4">
