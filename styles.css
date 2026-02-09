@@ -5,6 +5,26 @@
     scroll-behavior: smooth;
 }
 
+/* Set entire page background to bisque (#ffe4c4) */
+body, html, .bg-bisque {
+    background-color: #ffe4c4 !important;
+    min-height: 100vh;
+}
+
+/* Ensure all sections inherit the background */
+section, 
+.hero-section,
+#home,
+#about,
+#experience,
+#skills,
+#testimonials,
+#contact,
+.section-padding {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -17,24 +37,6 @@
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(to bottom, #800020, #5a0016);
     border-radius: 5px;
-}
-
-/* Hero Section - Updated to nude background */
-.hero-section {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #f9dfbe 0%, #f5c990 100%); /* nude gradient */
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(249, 223, 190, 0.9) 0%, rgba(245, 201, 144, 0.95) 100%);
-    z-index: 0;
 }
 
 /* Text Gradient */
@@ -126,7 +128,7 @@
     border-radius: 0.5rem;
     font-size: 1rem;
     transition: all 0.2s ease;
-    background: #f9fafb;
+    background: #f9fafb !important;
     color: #374151;
 }
 
@@ -134,7 +136,7 @@
     outline: none;
     border-color: #800020;
     box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.1);
-    background: white;
+    background: white !important;
 }
 
 .form-input::placeholder {
@@ -237,7 +239,7 @@ input[type="checkbox"] {
 /* Testimonial Cards with Borders and Hover Effects */
 .testimonial-card {
     transition: all 0.3s ease;
-    background: white;
+    background: white !important;
     border: 2px solid #fbd5d5;
     border-radius: 1rem;
     box-shadow: 0 4px 15px rgba(128, 0, 32, 0.1);
@@ -351,11 +353,6 @@ input[type="checkbox"] {
     background: linear-gradient(to right, transparent, #800020, transparent);
     margin: 0 auto;
     width: 100px;
-}
-
-/* Floating Elements Animation */
-.floating-element {
-    animation: float 6s ease-in-out infinite;
 }
 
 /* Form Success/Error Messages */
@@ -525,23 +522,9 @@ textarea:focus {
     transform: translateY(-3px) scale(1.02);
 }
 
-/* Ensure all sections have nude background */
-section {
-    background-color: #fdfaf6; /* nude-50 */
-}
-
-/* Update text colors for better contrast on nude background in hero */
-#home h1, #home h2, #home h3, #home h4 {
-    color: #34000d; /* burgundy-900 for contrast */
-}
-
-#home p {
-    color: #5a0016; /* burgundy-700 */
-}
-
 /* Testimonial section specific styles */
 #testimonials .testimonial-card {
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: blur(10px);
     overflow: hidden;
     position: relative;
@@ -634,4 +617,62 @@ section {
     .form-input {
         padding: 0.625rem 0.875rem;
     }
+}
+
+/* Ensure white cards have proper contrast on bisque background */
+.bg-white {
+    background-color: white !important;
+}
+
+/* Ensure gradients in cards still work */
+.bg-gradient-to-br,
+.bg-gradient-to-r {
+    background-image: none !important;
+}
+
+/* Force specific elements that should have color to keep it */
+.bg-burgundy-50 {
+    background-color: #fdf2f2 !important;
+}
+
+.bg-burgundy-900 {
+    background-color: #34000d !important;
+}
+
+.bg-burgundy-500 {
+    background-color: #800020 !important;
+}
+
+.bg-burgundy-600 {
+    background-color: #6d001b !important;
+}
+
+.bg-burgundy-700 {
+    background-color: #5a0016 !important;
+}
+
+.bg-burgundy-800 {
+    background-color: #470012 !important;
+}
+
+/* Ensure text is readable on bisque background */
+.text-gray-900 {
+    color: #1f2937;
+}
+
+.text-gray-800 {
+    color: #374151;
+}
+
+.text-gray-700 {
+    color: #4b5563;
+}
+
+.text-gray-600 {
+    color: #6b7280;
+}
+
+/* Remove any remaining floating background elements */
+.fixed.inset-0.overflow-hidden.pointer-events-none.z-0 {
+    display: none !important;
 }
